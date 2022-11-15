@@ -30,6 +30,7 @@ function drawGrid(gridNumber) {
             gridPiece.addEventListener("mouseover", function() {
                 gridPiece.setAttribute("style", "background-color: white;");
                 // gridPiece.textContent = "general kenobi";
+                console.log(randomRGB());
             }, false);
 
             gridRow.appendChild(gridPiece);
@@ -43,6 +44,15 @@ function clearGrid() {
     while(container.lastElementChild) {
         container.removeChild(container.lastElementChild);
     }
+}
+
+function randomRGB() {
+    let red, green, blue;
+    red = Math.floor(Math.random() * (255 - 0 + 1) + 0);
+    green = Math.floor(Math.random() * (255 - 0 + 1) + 0);
+    blue = Math.floor(Math.random() * (255 - 0 + 1) + 0);
+
+    return (`${red}, ${green}, ${blue}`);
 }
 
 drawGrid(gridNumber);
